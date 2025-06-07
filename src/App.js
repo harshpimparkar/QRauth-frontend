@@ -15,7 +15,7 @@ import Profile from './components/Profile';
 import QRScanner from './components/QRScanner';
 import Navbar from './components/Navbar';
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'https://qrauth-backend-1.onrender.com';
 
 const theme = createTheme({
   palette: {
