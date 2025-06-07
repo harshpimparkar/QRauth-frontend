@@ -38,7 +38,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      axios.get('/api/user/events', {
+      axios.get('https://qrauth-backend-1.onrender.com/api/user/events', {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => {

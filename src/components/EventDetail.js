@@ -32,8 +32,8 @@ function EventDetail() {
       try {
         const token = localStorage.getItem('token');
         const [eventRes, userRes] = await Promise.all([
-          axios.get(`/api/events/${id}`),
-          axios.get('/api/user/events', {
+          axios.get(`https://qrauth-backend-1.onrender.com/api/events/${id}`),
+          axios.get('https://qrauth-backend-1.onrender.com/api/user/events', {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);
@@ -48,7 +48,7 @@ function EventDetail() {
         
         // If organizer, fetch volunteers details
         if (userRes.data.organizedEvents.some(e => e._id === id)) {
-          const volunteersRes = await axios.get(`/api/events/${id}/volunteers`, {
+          const volunteersRes = await axios.get(`https://qrauth-backend-1.onrender.com/api/events/${id}/volunteers`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           setVolunteers(volunteersRes.data);
@@ -65,7 +65,7 @@ function EventDetail() {
 
   const handleRegister = async () => {
     try {
-      await axios.post(`/api/events/${id}/register`, {}, {
+      await axios.post(`https://qrauth-backend-1.onrender.com/api/events/${id}/register`, {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       setIsRegistered(true);

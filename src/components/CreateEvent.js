@@ -35,7 +35,7 @@ function CreateEvent() {
     eventDateTime.setMinutes(time.getMinutes());
     
     try {
-      const res = await axios.post('/api/events', {
+      const res = await axios.post('https://qrauth-backend-1.onrender.com/api/events', {
         title,
         description,
         location,

@@ -44,11 +44,11 @@ function Events() {
 
   const handleRegister = async (eventId) => {
     try {
-      await axios.post(`/api/events/${eventId}/register`, {}, {
+      await axios.post(`https://qrauth-backend-1.onrender.com/api/events/${eventId}/register`, {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       // Refresh events
-      const res = await axios.get('/api/user/events', {
+      const res = await axios.get('https://qrauth-backend-1.onrender.com/api/user/events', {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       setVolunteerEvents(res.data.volunteerEvents);

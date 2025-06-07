@@ -21,7 +21,7 @@ function Login({ onLogin }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/login', { email, password });
+      const res = await axios.post('https://qrauth-backend-1.onrender.com/api/login', { email, password });
       onLogin(res.data.user, res.data.token);
       navigate('/');
     } catch (err) {

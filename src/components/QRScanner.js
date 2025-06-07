@@ -31,7 +31,7 @@ function QRScanner() {
       setError('');
       // Show success message
       setTimeout(() => {
-        navigate(`/event/${res.data.event._id}`);
+        navigate(`https://qrauth-backend-1.onrender.com/event/${res.data.event._id}`);
       }, 2000);
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to record attendance');

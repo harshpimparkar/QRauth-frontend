@@ -22,7 +22,7 @@ function Signup({ onSignup }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/register', { name, email, password });
+      const res = await axios.post('https://qrauth-backend-1.onrender.com/api/register', { name, email, password });
       onSignup(res.data.user, res.data.token);
       navigate('/');
     } catch (err) {

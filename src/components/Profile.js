@@ -24,7 +24,7 @@ function Profile({ user }) {
     const fetchAttendedEvents = async () => {
       try {
         // Get all events where user is registered
-        const res = await axios.get('/api/user/events', {
+        const res = await axios.get('https://qrauth-backend-1.onrender.com/api/user/events', {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         
